@@ -1,1 +1,2 @@
-# celebrity_classifier
+# Binary Classification of Celebrity Portraits
+This project builds off of prior work, in which I generated a dataset of celebrity portraits using stable diffusion, emphasizing caption sanitizing as a means of achieving photorealistic images. The purpose of this quarter’s project was to build a binary classifier CNN that will be able to accurately determine whether a given image is real or AI-generated. 

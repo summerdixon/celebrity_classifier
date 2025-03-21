@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portrait Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        img { max-width: 100%; border-radius: 10px; }
+        .result { font-size: 20px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload a Portrait</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Classify</button>
+        </form>
+
+        {% if filename %}
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+            <p class="result">Prediction: {{ prediction }}</p>
+        {% endif %}
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
